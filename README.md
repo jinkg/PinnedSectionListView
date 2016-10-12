@@ -1,6 +1,6 @@
 # PinnedSectionListView
 
-<img src="screenshots/pinned_section_listview_screen_shot.gif" width="180" height="320">
+<img src="https://github.com/jinkg/Screenshots/blob/master/PinnedSectionListView/pinned_section_listview_screen_shot.gif" width="180" height="320">
 
 ## Usage
 
