@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PinnedSectionListView pinnedSectionListView = (PinnedSectionListView) findViewById(R.id.pinned_list_view);
+        PinnedSectionListView pinnedSectionListView =
+                (PinnedSectionListView) findViewById(R.id.pinned_list_view);
         pinnedSectionListView.setShadowVisible(true);
 
         mAdapter = new TimelineAdapter(this, null);

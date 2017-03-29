@@ -63,9 +63,11 @@ public class PinnedSectionListView extends ListView {
         }
 
         @Override
-        public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+        public void onScroll(AbsListView view, int firstVisibleItem,
+                             int visibleItemCount, int totalItemCount) {
             if (mDelegateOnScrollListener != null) {
-                mDelegateOnScrollListener.onScroll(view, firstVisibleItem, visibleItemCount, totalItemCount);
+                mDelegateOnScrollListener.onScroll(view, firstVisibleItem,
+                        visibleItemCount, totalItemCount);
             }
 
             ListAdapter adapter = getAdapter();
@@ -160,7 +162,8 @@ public class PinnedSectionListView extends ListView {
             pinnedShadow = new PinnedSection();
         }
 
-        View pinnedView = getAdapter().getView(position, pinnedShadow.view, PinnedSectionListView.this);
+        View pinnedView =
+                getAdapter().getView(position, pinnedShadow.view, PinnedSectionListView.this);
 
         ViewGroup.LayoutParams layoutParams = pinnedView.getLayoutParams();
         if (layoutParams == null) {
@@ -180,8 +183,8 @@ public class PinnedSectionListView extends ListView {
             heightSize = maxHeight;
         }
 
-        int ws = MeasureSpec.makeMeasureSpec(getWidth() - getListPaddingLeft() - getListPaddingRight()
-                , MeasureSpec.EXACTLY);
+        int ws = MeasureSpec.makeMeasureSpec(
+                getWidth() - getListPaddingLeft() - getListPaddingRight(), MeasureSpec.EXACTLY);
         int hs = MeasureSpec.makeMeasureSpec(heightSize, heightMode);
         pinnedView.measure(ws, hs);
         pinnedView.layout(0, 0, pinnedView.getMeasuredWidth(), pinnedView.getMeasuredHeight());
@@ -323,7 +326,8 @@ public class PinnedSectionListView extends ListView {
     public void setAdapter(ListAdapter adapter) {
         if (adapter != null) {
             if (!(adapter instanceof PinnedSectionListAdapter)) {
-                throw new IllegalArgumentException("Does your adapter implement PinnedSectionListAdapter?");
+                throw new IllegalArgumentException(
+                        "Does your adapter implement PinnedSectionListAdapter?");
             }
             if (adapter.getViewTypeCount() < 2) {
                 throw new IllegalArgumentException("Does your adapter handle at least two types" +

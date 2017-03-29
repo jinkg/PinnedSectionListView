@@ -21,7 +21,8 @@ import java.util.List;
  * 作者：YaLin
  * 日期：2016/7/26.
  */
-public class TimelineAdapter extends BaseAdapter implements PinnedSectionListView.PinnedSectionListAdapter {
+public class TimelineAdapter extends BaseAdapter
+        implements PinnedSectionListView.PinnedSectionListAdapter {
     private static final int ITEM_TYPE_COUNT = 3;
 
     private static final int TYPE_DATE_TAG = 0;
@@ -86,11 +87,15 @@ public class TimelineAdapter extends BaseAdapter implements PinnedSectionListVie
         if ((type == TYPE_DATE_TAG || type == TYPE_SECTION_TAG) && item instanceof TimelineModel) {
             TimelineViewHolder holder;
             if (convertView == null) {
-                convertView = LayoutInflater.from(mContext).inflate(R.layout.layout_time_line_item, parent, false);
+                convertView = LayoutInflater.from(mContext)
+                        .inflate(R.layout.layout_time_line_item, parent, false);
                 holder = new TimelineViewHolder();
-                holder.tvTag = (TextView) convertView.findViewById(R.id.interview_date_tag_tv_tag);
-                holder.ivType = (ImageView) convertView.findViewById(R.id.interview_date_tag_iv_type);
-                holder.llParent = (LinearLayout) convertView.findViewById(R.id.interview_date_tag_ll_parent);
+                holder.tvTag =
+                        (TextView) convertView.findViewById(R.id.interview_date_tag_tv_tag);
+                holder.ivType =
+                        (ImageView) convertView.findViewById(R.id.interview_date_tag_iv_type);
+                holder.llParent =
+                        (LinearLayout) convertView.findViewById(R.id.interview_date_tag_ll_parent);
                 convertView.setTag(holder);
             } else {
                 holder = (TimelineViewHolder) convertView.getTag();
@@ -99,7 +104,8 @@ public class TimelineAdapter extends BaseAdapter implements PinnedSectionListVie
         } else if (type == TYPE_INTERVIEW_ITEM) {
             Object holder;
             if (convertView == null) {
-                convertView = LayoutInflater.from(mContext).inflate(R.layout.layout_item, parent, false);
+                convertView = LayoutInflater.from(mContext)
+                        .inflate(R.layout.layout_item, parent, false);
                 holder = createHolder(convertView);
                 convertView.setTag(holder);
             } else {
